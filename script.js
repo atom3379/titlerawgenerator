@@ -59,28 +59,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }else{alert("ยังไม่มีอะไรจะก๊อปนะเพื่อน");}
     });
 
-    toggleColorsBtn.addEventListener("click",()=>{
-        if(colorInfo.style.display==="none"){
-            let info="";
-            for(const code in colorMap) info+=`§${code} = ${colorMap[code]}\n`;
-            colorInfo.textContent=info;
-            colorInfo.style.display="block";
-        }else{
-            colorInfo.style.display="none";
+    function toggleBox(box, content){
+        if(!box.classList.contains("show")){
+            box.textContent = content;
+            box.classList.add("show");
+        } else {
+            box.classList.remove("show");
         }
+    }
+
+    toggleColorsBtn.addEventListener("click",()=>{
+        let info="";
+        for(const code in colorMap) info+=`§${code} = ${colorMap[code]}\n`;
+        toggleBox(colorInfo, info);
     });
 
     toggleSelectorsBtn.addEventListener("click",()=>{
-        if(selectorInfo.style.display==="none"){
-            let info="";
-            // selector ปกติ
-            for(const sel in selectorMap) info+=`${sel} = ${selectorMap[sel]}\n`;
-            // เพิ่ม score ตัวอย่าง
-            info+="{score:ตัวอย่างคะแนน} = แทนคะแนนของตัวเอง\n";
-            selectorInfo.textContent=info;
-            selectorInfo.style.display="block";
-        }else{
-            selectorInfo.style.display="none";
-        }
+        let info="";
+        for(const sel in selectorMap) info+=`${sel} = ${selectorMap[sel]}\n`;
+        info+="{score:ตัวอย่างคะแนน} = แทนคะแนนของตัวเอง\n";
+        toggleBox(selectorInfo, info);
     });
 });
