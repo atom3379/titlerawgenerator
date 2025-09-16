@@ -3,8 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const outputBox = document.getElementById("outputBox");
     const generateBtn = document.getElementById("generateBtn");
     const copyBtn = document.getElementById("copyBtn");
-    const showColorsBtn = document.getElementById("showColorsBtn");
-    const showSelectorsBtn = document.getElementById("showSelectorsBtn");
+    const toggleColorsBtn = document.getElementById("toggleColorsBtn");
+    const toggleSelectorsBtn = document.getElementById("toggleSelectorsBtn");
     const colorInfo = document.getElementById("colorInfo");
     const selectorInfo = document.getElementById("selectorInfo");
 
@@ -70,19 +70,24 @@ document.addEventListener("DOMContentLoaded", () => {
         } else { alert("ยังไม่มีอะไรจะก๊อปนะเพื่อน"); }
     });
 
-    showColorsBtn.addEventListener("click", () => {
-        let info = "";
-        for (const code in colorMap) {
-            info += `§${code} = ${colorMap[code]}\n`;
+    function toggleBox(box, content) {
+        if (box.classList.contains("hidden")) {
+            box.textContent = content;
+            box.classList.remove("hidden");
+        } else {
+            box.classList.add("hidden");
         }
-        colorInfo.textContent = info;
+    }
+
+    toggleColorsBtn.addEventListener("click", () => {
+        let info = "";
+        for (const code in colorMap) info += `§${code} = ${colorMap[code]}\n`;
+        toggleBox(colorInfo, info);
     });
 
-    showSelectorsBtn.addEventListener("click", () => {
+    toggleSelectorsBtn.addEventListener("click", () => {
         let info = "";
-        for (const sel in selectorMap) {
-            info += `${sel} = ${selectorMap[sel]}\n`;
-        }
-        selectorInfo.textContent = info;
+        for (const sel in selectorMap) info += `${sel} = ${selectorMap[sel]}\n`;
+        toggleBox(selectorInfo, info);
     });
 });
