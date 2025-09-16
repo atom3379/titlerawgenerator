@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const selectorMap = {
-        '@a':'ทุกคน','@s':'ตัวเอง','@e':'ทุก entity','@r':'สุ่มผู้เล่น','@p':'ผู้เล่นใกล้สุด'
+        '@a':'ทุกคน','@s':'ตัวเอง','@e':'ทุก entity','@r':'สุ่มผู้เล่น','@p':'ผู้เล่นใกล้สุด','{scpre:name}':'แสดง scoreboard โดยแทน name ด้วยชื่อ scrorboard'
     };
 
     function parseInput(text) {
@@ -81,3 +81,4 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
