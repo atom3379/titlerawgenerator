@@ -94,4 +94,22 @@ button:hover {
     white-space: pre-wrap;
 }
 
+.infoBox {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3a3a4a;
+    border-radius: 12px;
+    font-size: 14px;
+    white-space: pre-wrap;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 10px;
+}
+
+
 
