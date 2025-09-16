@@ -43,10 +43,12 @@ button {
     transition: all 0.3s ease;
 }
 
-#copyBtn { background-color: #5cdb5c; color: black; }
-#toggleColorsBtn { background-color: #ffcc00; color: black; }
-#toggleSelectorsBtn { background-color: #00ccff; color: black; }
+/* ปรับสีให้สุภาพขึ้น */
+#copyBtn { background-color: #4a9f50; color: white; }
+#toggleColorsBtn { background-color: #bfa000; color: white; }
+#toggleSelectorsBtn { background-color: #009bbf; color: white; }
 
+/* infoBox เพิ่ม fade effect */
 .infoBox {
     margin-top: 10px;
     padding: 10px;
@@ -54,5 +56,16 @@ button {
     border-radius: 12px;
     font-size: 14px;
     white-space: pre-wrap;
-    display: none; /* ปิดไว้ก่อน */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
 }
+
+/* ใช้ class แทน display:block/none เพื่อทำ fading */
+.infoBox.show {
+    max-height: 500px; /* ปรับตามความยาว content */
+    opacity: 1;
+    padding: 10px;
+}
+
