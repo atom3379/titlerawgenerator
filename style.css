@@ -1,4 +1,3 @@
-/* ฟอนต์ Noto Sans Thai */
 body {
     font-family: 'Noto Sans Thai', sans-serif;
     background: linear-gradient(135deg, #1f1f2e, #2a2a3e);
@@ -18,12 +17,7 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.5);
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #5cdb5c;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
-}
+h1 { text-align: center; margin-bottom: 20px; color: #5cdb5c; }
 
 textarea {
     width: 100%;
@@ -36,63 +30,22 @@ textarea {
     font-family: 'Noto Sans Thai', monospace;
     font-size: 14px;
     resize: vertical;
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.5);
 }
 
 button {
     width: 100%;
     padding: 14px;
     margin: 10px 0;
-    background-color: #007acc;
-    color: white;
     border: none;
     border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
 }
 
-button:hover {
-    background-color: #005f99;
-    transform: translateY(-2px);
-}
-
-#copyBtn {
-    background-color: #5cdb5c;
-    color: black;
-}
-
-#copyBtn:hover {
-    background-color: #4abf4a;
-    transform: translateY(-2px);
-}
-
-#showColorsBtn {
-    background-color: #ffcc00;
-    color: black;
-}
-
-#showColorsBtn:hover {
-    background-color: #e6b800;
-}
-
-#colorInfo {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #3a3a4a;
-    border-radius: 12px;
-    font-size: 14px;
-}
-
-#selectorInfo {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #3a3a4a;
-    border-radius: 12px;
-    font-size: 14px;
-    white-space: pre-wrap;
-}
+#copyBtn { background-color: #5cdb5c; color: black; }
+#toggleColorsBtn { background-color: #ffcc00; color: black; }
+#toggleSelectorsBtn { background-color: #00ccff; color: black; }
 
 .infoBox {
     margin-top: 10px;
@@ -101,15 +54,5 @@ button:hover {
     border-radius: 12px;
     font-size: 14px;
     white-space: pre-wrap;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
-    overflow: hidden;
+    display: none; /* ปิดไว้ก่อน */
 }
-
-.hidden {
-    max-height: 0;
-    opacity: 0;
-    padding: 0 10px;
-}
-
-
-
