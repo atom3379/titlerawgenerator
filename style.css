@@ -84,3 +84,14 @@ button:hover {
     border-radius: 12px;
     font-size: 14px;
 }
+
+#selectorInfo {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #3a3a4a;
+    border-radius: 12px;
+    font-size: 14px;
+    white-space: pre-wrap;
+}
+
+
