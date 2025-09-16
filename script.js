@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const selectorMap = {
-        '@a':'ทุกคน','@s':'ตัวเอง','@e':'ทุก entity','@r':'สุ่มผู้เล่น','@p':'ผู้เล่นใกล้สุด','{scpre:name}':'แสดง scoreboard โดยแทน name ด้วยชื่อ scrorboard'
+        '@a':'ทุกคน','@s':'ตัวเอง','@e':'ทุก entity','@r':'สุ่มผู้เล่น','@p':'ผู้เล่นใกล้สุด'
     };
 
     function parseInput(text) {
@@ -73,7 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleSelectorsBtn.addEventListener("click",()=>{
         if(selectorInfo.style.display==="none"){
             let info="";
+            // selector ปกติ
             for(const sel in selectorMap) info+=`${sel} = ${selectorMap[sel]}\n`;
+            // เพิ่ม score ตัวอย่าง
+            info+="{score:ตัวอย่างคะแนน} = แทนคะแนนของตัวเอง\n";
             selectorInfo.textContent=info;
             selectorInfo.style.display="block";
         }else{
@@ -81,4 +84,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
